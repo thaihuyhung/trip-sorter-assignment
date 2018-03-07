@@ -12,7 +12,7 @@ export class SearchTripResultComponent implements OnInit {
   routes: Array<DealModel> = [];
 
   @Input()
-  sortType: string;
+  sortType: number;
 
   @Input()
   totalTime: string;
@@ -47,5 +47,4 @@ export class SearchTripResultComponent implements OnInit {
   onChangeSortType() {
     this.changeSortType.emit(true);
   }
-
 }
