@@ -1,0 +1,48 @@
+<section fxLayout="column" fxLayoutAlign="start end">
+    <mat-list class="route-result-list" fxLayout="column">
+        <mat-list-item *ngFor="let route of routes" class="route-result-item" fxLayout="row" fxLayoutAlign="start start">
+            <div fxFlex="60px">
+                <mat-icon class="route-result-item__icon route-result-item__icon-transport"
+                          [matTooltip]="route.transport | titlecase">{{route.transport | transportIcon}}</mat-icon>
+                <div class="route-result-item__reference">{{route.reference}}</div>
+            </div>
+            <div class="route-result-item__description" fxFlex>
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <div>
+                        <div class="route-result-item__ond" fxLayout="row" fxLayoutAlign="space-between center">
+                            <span>{{route.departure}}</span>
+                            <mat-icon class="route-result-item__icon">keyboard_arrow_right</mat-icon>
+                            <span>{{route.arrival}}</span>
+                        </div>
+                        <div class="route-result-item__time">{{route.duration.h}}h {{route.duration.m}}m</div>
+                    </div>
+                    <div class="route-result-item__price-wrapper">
+                        <b class="route-result-item__price">{{route.cost | dealPrice: route.discount}}</b>
+                        <div *ngIf="route.discount">
+                            <span class="route-result-item__cost">{{route.cost | currency:'EUR': 'symbol':'.0-2'}}</span>
+                            <span class="route-result-item__discount" matTooltip="Discount">- {{route.discount}}%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-list-item>
+
+        <mat-list-item class="route-result-item route-result-item_total" fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="60px">Total</div>
+            <div class="route-result-item__description" fxLayout="row" fxLayoutAlign="space-between center">
+                <span>{{totalTime}}</span>
+                <b>{{totalCost | currency:'EUR': 'symbol':'.0-2'}}</b>
+            </div>
+        </mat-list-item>
+    </mat-list>
+
+    <div class="route-result__actions" fxLayout="row" fxLayoutAlign="space-between center" >
+        <button mat-button color="accent" (click)="onChangeSortType()">
+          Show me {{ sortType == 1 ? 'fastest' : 'cheapest'}} trip
+        </button>
+        <button mat-raised-button color="primary" (click)="onReset()">
+            <mat-icon>replay</mat-icon>
+            Reset
+        </button>
+    </div>
+</section>

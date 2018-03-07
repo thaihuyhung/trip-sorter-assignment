@@ -1,0 +1,89 @@
+@import '../../../scss/base/color';
+
+.trip-sorter {
+  width: 480px;
+  position: relative;
+  /deep/.mat-card-header-text {
+    margin: 0;
+  }
+  .mat-card-title {
+    font-size: 18px;
+  }
+  /deep/.mat-list .mat-list-item {
+    height: auto;
+  }
+  &__subtitle {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+  }
+  &__btn-search {
+    display: block;
+    width: 200px;
+  }
+  &__card-ribbon{
+    position: absolute;
+    top: 0;
+    right: 24px;
+    width: 32px;
+    text-align: center;
+    height: 64px;
+    box-sizing: border-box;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    &:before{
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 16px 16px 0 0;
+      content: ' ';
+      position: absolute;
+      top: 64px;
+      left: 0;
+    }
+    &:after{
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 16px 16px 0;
+      position: absolute;
+      top: 64px;
+      right: 0;
+    }
+    &_fastest {
+      background: $color-fastest;
+      &:before{
+        border-color: $color-fastest transparent transparent transparent;
+      }
+      &:after{
+        border-color: transparent $color-fastest transparent transparent;
+      }
+    }
+    &_cheapest {
+      background: $color-cheapest;
+      &:before{
+        border-color: $color-cheapest transparent transparent transparent;
+      }
+      &:after{
+        border-color: transparent $color-cheapest transparent transparent;
+      }
+    }
+  }
+  &__swap-button {
+    color: $color-icon;
+    margin-top: 20px;
+  }
+}
+.sort-type {
+  margin-bottom: 24px;
+  width: 200px;
+  .mat-button-toggle-checked {
+    color: $color-mat-button-toggle-checked;
+    background: $color-mat-button-toggle-checked-background
+  }
+}

@@ -1,0 +1,61 @@
+@import '../../../scss/base/color';
+
+.route-result-list {
+    width: 100%;
+    /deep/.mat-list-item-content {
+        width: 100%;
+    }
+}
+.route-result-item {
+    padding: 24px 0;
+    border-bottom: 1px solid $color-border;
+    &__description {
+        padding-left: 32px;
+        width: 100%;
+    }
+    &__ond {
+        font-size: 16px;
+    }
+    &__price-wrapper {
+        text-align: right;
+    }
+    &__discount {
+        font-size: 10px;
+        background: #FF9800;
+        color: #fff;
+        border-radius: 3px;
+        padding: 4px;
+    }
+    &__cost {
+        text-decoration: line-through;
+        font-size: 15px;
+        padding-top: 4px;
+        display: inline-block;
+        vertical-align: middle;
+        color: #9e9e9e;
+    }
+    &__price {
+        font-size: 16px;
+    }
+    &_total {
+        margin-bottom: 24px;
+        font-size: 16px;
+    }
+    &__time {
+        font-size: 12px;
+    }
+    &__reference {
+        color: $color-description;
+        font-size: 12px;
+    }
+    &__icon {
+        color: $color-icon;
+        &-transport {
+            margin-left: 14px;
+        }
+    }    
+}
+
+.route-result__actions {
+    width: 100%;
+}
