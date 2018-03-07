@@ -38,7 +38,7 @@
 
     <div class="route-result__actions" fxLayout="row" fxLayoutAlign="space-between center" >
         <button mat-button color="accent" (click)="onChangeSortType()">
-          Show me {{ sortType == 1 ? 'fastest' : 'cheapest'}} trip
+          Show me {{ sortType === 1 ? 'fastest' : 'cheapest'}} trip
         </button>
         <button mat-raised-button color="primary" (click)="onReset()">
             <mat-icon>replay</mat-icon>

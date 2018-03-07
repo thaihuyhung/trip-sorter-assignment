@@ -1,6 +1,7 @@
 # TripSorter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
+This project was built by Angular 5 and Angular Material 5 using Angular CLI
+
 
 ## Development server
 
